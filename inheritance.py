@@ -40,7 +40,7 @@ class GeometricObject:
         self.line_width = line_width
 
     def introduce(self):
-        print("color:", self.color)
+        print("color:", self.color, ", line width:", self.line_width, end=" ")
 
 
 class Circle2(GeometricObject):
@@ -48,12 +48,10 @@ class Circle2(GeometricObject):
     def __init__(self, color, line_width, radius):
         super().__init__(color, line_width)
         self.radius = radius
-        super().introduce()
 
     def introduce(self):
-        print("from circle2")
         super().introduce()
-
+        print("radius:", self.radius)
 
 
 class Rectangle2(GeometricObject):
@@ -63,7 +61,11 @@ class Rectangle2(GeometricObject):
         self.width = width
         self.height = height
 
+    def introduce(self):
+        super().introduce()
+        print("width:", self.width, "height:", self.height)
 
-c = Circle2("white", 2, 5)
-print(c.color)
-c.introduce()
+
+# c = Circle2("white", 2, 5)
+# print(c.color)
+# c.introduce()
